@@ -17,11 +17,26 @@ body {
     justify-content: center;
 }
 
+h4 {
+    margin-top: 2rem;
+}
+
 button {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
     border-radius: 50%;
     background: #5448C8;
     border: 1px solid #0D0221;
     cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+button:hover {
+    background: #27187E;
+}
+
+.fun {
+    background: #59C173;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
