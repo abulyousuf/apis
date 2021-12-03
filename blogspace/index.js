@@ -32,5 +32,15 @@ newPost.addEventListener("submit", (e) => {
     postTitle.value = "";
     postBody.value = "";
 
-    console.log(data);
+    const options = {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/posts", options)
+        .then(res => res.json())
+        .then(data => console.log(data));
 });
