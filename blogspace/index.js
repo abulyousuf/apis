@@ -8,7 +8,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         for (let post of postsArr) {
             html += `
                 <h3>${post.title}</h3>
-                <p>${post.title}</p>
+                <p>${post.body}</p>
                 <hr>
             `;
         }
