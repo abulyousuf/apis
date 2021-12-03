@@ -1,3 +1,5 @@
+const blogList = document.querySelector("#blog-list");
+
 fetch("https://jsonplaceholder.typicode.com/posts")
     .then(res => res.json())
     .then(data => {
@@ -13,7 +15,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
             `;
         }
 
-        document.querySelector("#blog-list").innerHTML = html;
+        blogList.innerHTML = html;
     });
 
 const newPost = document.querySelector("#new-post");
@@ -42,5 +44,7 @@ newPost.addEventListener("submit", (e) => {
 
     fetch("https://jsonplaceholder.typicode.com/posts", options)
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(post => {
+            blogList.insertAdjacentHTML("afterbegin", `<h3>${post.title}</h3><p>${post.body}</p><hr>`);
+        });
 });
