@@ -18,6 +18,23 @@ body {
     align-items: center;
 }
 
+form {
+    padding: 60px 10px 10px;
+    display: grid;
+    background: #DDF093;
+}
+
+input#post-title,
+textarea#post-body {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 .blog-list {
-    padding: 40px 10px 10px;
+    padding: 10px;
 }
