@@ -15,3 +15,22 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 
         document.querySelector("#blog-list").innerHTML = html;
     });
+
+const newPost = document.querySelector("#new-post");
+
+newPost.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const postTitle = document.querySelector("#post-title");
+    const postBody = document.querySelector("#post-body");
+
+    const data = {
+        title: postTitle.value,
+        body: postBody.value
+    };
+
+    postTitle.value = "";
+    postBody.value = "";
+
+    console.log(data);
+});
