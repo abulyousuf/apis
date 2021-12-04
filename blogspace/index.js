@@ -37,8 +37,10 @@ newPost.addEventListener("submit", (e) => {
         body: postBody.value
     };
 
-    postTitle.value = "";
-    postBody.value = "";
+    // postTitle.value = "";
+    // postBody.value = "";
+
+    newPost.reset();
 
     const options = {
         method: "POST",
