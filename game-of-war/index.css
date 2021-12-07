@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 650px;
+    width: 95%;
+    height: 650px;
+    background-image: url("./img/table.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    background: #e1ad01;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease-out;
+}
+
+.new-deck {
+    align-self: flex-start;
+}
+
+.new-deck,
+.draw-cards {
+    font-size: 1.25rem;
+    padding: 5px;
+}
+
+button:hover {
+    background: #b48a01;
+}
