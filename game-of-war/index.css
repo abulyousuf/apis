@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 .container {
@@ -23,12 +24,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 button {
     background: #e1ad01;
     cursor: pointer;
     border: none;
+    font-size: 1.25rem;
+    padding: 5px;
     transition: all 0.5s ease-out;
 }
 
@@ -36,10 +40,8 @@ button {
     align-self: flex-start;
 }
 
-.new-deck,
 .draw-cards {
-    font-size: 1.25rem;
-    padding: 5px;
+    align-self: stretch;
 }
 
 button:hover {
