@@ -6,11 +6,13 @@ const drawCardsBtn = document.querySelector("#draw-cards");
 const header = document.querySelector("#header");
 const remainingCards = document.querySelector("#remaining");
 
-const handleClick = () => {
+const getNewDeck = () => {
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/")
         .then(res => res.json())
         .then(data => {
             deckId = data.deck_id;
+
+            remainingCards.textContent = `Remaining cards: ${data.remaining}`;
         });
 };
 
@@ -45,6 +47,6 @@ const drawCards = () => {
         });
 };
 
-newDeckBtn.addEventListener("click", handleClick);
+newDeckBtn.addEventListener("click", getNewDeck);
 
 drawCardsBtn.addEventListener("click", drawCards);
