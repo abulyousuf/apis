@@ -19,6 +19,16 @@ const getNewDeck = () => {
 
             remainingCards.textContent = `Remaining cards: ${data.remaining}`;
 
+            header.textContent = "Game of War";
+
+            computerScore = 0;
+            myScore = 0;
+            computerScoreEl.textContent = `Computer score: ${computerScore}`;
+            myScoreEl.textContent = `My score: ${myScore}`;
+
+            cardsContainer.children[0].textContent = "";
+            cardsContainer.children[1].textContent = "";
+
             drawCardsBtn.disabled = false;
         });
 };
