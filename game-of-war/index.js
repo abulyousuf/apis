@@ -13,6 +13,8 @@ const getNewDeck = () => {
             deckId = data.deck_id;
 
             remainingCards.textContent = `Remaining cards: ${data.remaining}`;
+
+            drawCardsBtn.disabled = false;
         });
 };
 
@@ -36,6 +38,10 @@ const drawCards = () => {
         .then(res => res.json())
         .then(data => {
             remainingCards.textContent = `Remaining cards: ${data.remaining}`;
+
+            if (data.remaining === 0) {
+                drawCardsBtn.disabled = true;
+            }
 
             for (let i = 0; i < cardsContainer.children.length; i++) {
                 cardsContainer.children[i].innerHTML = `
