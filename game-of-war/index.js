@@ -1,10 +1,15 @@
 let deckId = "";
 
+let computerScore = 0;
+let myScore = 0;
+
 const cardsContainer = document.querySelector("#cards");
 const newDeckBtn = document.querySelector("#new-deck");
 const drawCardsBtn = document.querySelector("#draw-cards");
 const header = document.querySelector("#header");
 const remainingCards = document.querySelector("#remaining");
+const computerScoreEl = document.querySelector("#computer-score");
+const myScoreEl = document.querySelector("#my-score");
 
 const getNewDeck = () => {
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/")
@@ -25,8 +30,12 @@ const getCardWinner = (card1, card2) => {
     const card2ValueIndex = valuesArray.indexOf(card2.value);
 
     if (card1ValueIndex > card2ValueIndex) {
+        computerScore++;
+        computerScoreEl.textContent = `Computer score: ${computerScore}`;
         return "Computer wins!";
     } else if (card1ValueIndex < card2ValueIndex) {
+        myScore++;
+        myScoreEl.textContent = `My score: ${myScore}`;
         return "You win!";
     } else {
         return "War!";
