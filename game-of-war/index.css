@@ -81,3 +81,7 @@ button:hover {
 .top > p {
     margin-left: 10px;
 }
+
+button:disabled {
+    cursor: not-allowed;
+}
