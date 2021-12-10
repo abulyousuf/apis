@@ -44,7 +44,7 @@ button {
     align-self: stretch;
 }
 
-button:hover {
+button:enabled:hover {
     background: #b48a01;
 }
 
