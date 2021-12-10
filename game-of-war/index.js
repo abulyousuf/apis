@@ -11,6 +11,10 @@ const remainingCards = document.querySelector("#remaining");
 const computerScoreEl = document.querySelector("#computer-score");
 const myScoreEl = document.querySelector("#my-score");
 
+if (deckId === "") {
+    drawCardsBtn.disabled = true;
+}
+
 const getNewDeck = () => {
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/")
         .then(res => res.json())
