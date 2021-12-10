@@ -48,10 +48,6 @@ const drawCards = () => {
         .then(data => {
             remainingCards.textContent = `Remaining cards: ${data.remaining}`;
 
-            if (data.remaining === 0) {
-                drawCardsBtn.disabled = true;
-            }
-
             for (let i = 0; i < cardsContainer.children.length; i++) {
                 cardsContainer.children[i].innerHTML = `
                     <img src="${data.cards[i].image}" alt="card" class="card">
@@ -59,6 +55,18 @@ const drawCards = () => {
             }
 
             header.textContent = (getCardWinner(data.cards[0], data.cards[1]));
+
+            if (data.remaining === 0) {
+                drawCardsBtn.disabled = true;
+
+                if (computerScore > myScore) {
+                    header.textContent = "The computer won the game!";
+                } else if (myScore > computerScore) {
+                    header.textContent = "You won the game!";
+                } else {
+                    header.textContent = "It's a tie game!";
+                }
+            }
         });
 };
 
